@@ -11,7 +11,7 @@ pipeline {
            {
             steps {
       
-                           load "${Workspace}/ext.ps1 -pipelinename $Pipeline_Name"
+                           load "${Workspace}/ext.ps1"
                   }
            }
   }
