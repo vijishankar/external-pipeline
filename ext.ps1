@@ -6,10 +6,10 @@ $pipelinename = "external-pipeline"
   
 
 
-$uri = "http://54.174.181.118:8080/job/Paysaas_sampath/lastSuccessfulBuild/api/json"
-$wc = New-Object System.Net.WebClient
-$wc.UseDefaultCredentials = $true
-$json = $wc.DownloadString($uri)
+$userpassB64 = [byte[]][char[]]"DevopsUser:CptDevops@111" | ConvertTo-Base64 -NoLineBreak
+Write-Output $userpassB64
+$res = Invoke-WebRequest http://artifactory.my.company.com:8081/artifactory/api/npm/auth `
+       -Headers @{Authorization = "Basic $userpassB64"}
 
 
  
