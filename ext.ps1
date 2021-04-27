@@ -3,7 +3,7 @@
 
 $pipelinename = "external-pipeline"
 
-  $buildNumber = Jenkins.instance.getItem('azresource-creation').lastSuccessfulBuild.number
+  
 
 
 
