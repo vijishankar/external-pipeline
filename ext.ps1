@@ -3,9 +3,9 @@
 
 $pipelinename = "external-pipeline"
 
- $buildNumber = Jenkins.instance.getItem('azresource-creation').lastSuccessfulBuild.number
+ def buildNumber = Jenkins.instance.getItem('azresource-creation').lastSuccessfulBuild.number
 
-Write-Host $buildNumber
+Write-Host buildNumber
 
 sh 'curl -X GET http://54.174.181.118:8080/job/azresource-creation/$buildNumber/api/json --user DevopsUser:CptDevops@111'
 
