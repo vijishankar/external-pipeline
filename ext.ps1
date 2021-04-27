@@ -8,7 +8,7 @@ $pipelinename = "external-pipeline"
 $user = 'DevopsUser'
 $pass = 'CptDevops@111'
 
-$pair = "$($user):$($pass)"
+$pair = "$user:$pass"
 
 $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
 
