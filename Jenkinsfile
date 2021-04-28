@@ -15,13 +15,19 @@ pipeline {
                   }
            }
       
-      stage ('Invoke_pipeline') 
-      {
+      stage('Delete Resources') {
             steps {
-                build job: 'azresource-creation/main', parameters: [string(name: 'ENVIRONMENT', value: '$Env:ENVIRONMENT')]
-                  
-                 }
-      }
+				
+                     if('$Env:DELETE_ALL' = "true")
+                     {
+							build job: 'TIPS_DELETE_SHAIK', parameters: [ string (name: 'PROJECT', value: "Temenos")]
+						
+						
+                     }   
+					
+				
+			}
+        }	
   }
 
 }
