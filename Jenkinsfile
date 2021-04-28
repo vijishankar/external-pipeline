@@ -4,19 +4,11 @@ pipeline {
     
   stages 
   {
-
-        stage('Deploying Resource')
-           {
-            steps {
-      
-                           //load "${Workspace}/ext.ps1"
-                  }
-           }
-      
-      stage('Delete Resources') {
+      stage('Delete Resources') 
+	  {
             steps {
 				
-                     If ($DELETE_ALL == "true")
+		    If (${DELETE_ALL} == "true")
                      {
 							
 			     
