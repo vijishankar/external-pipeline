@@ -7,7 +7,7 @@ $pipelinename = "external-pipeline"
 
 $User = "DevopsUser"
 $pass = "CptDevops@111"
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("$($User):$($pass)"))
+$base64AuthInfo = [Convert]:ToBase64String([Text.Encoding]::ASCII.GetBytes("$($User):$($pass)"))
 $Header = @{
     Authorization = "Basic $base64AuthInfo"
 }
