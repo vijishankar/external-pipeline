@@ -5,16 +5,12 @@ $pipelinename = "external-pipeline"
 
 
 
-$User = "DevopsUser"
-$pass = "CptDevops@111"
-$base64AuthInfo = [Convert]:ToBase64String([Text.Encoding]::ASCII.GetBytes("$($User):$($pass)"))
-$Header = @{
-    Authorization = "Basic $base64AuthInfo"
-}
+$USERNAME = "DevopsUser"
+$PASSWORD = "CptDevops@111"
 
-Invoke-RestMethod -Uri http://54.174.181.118:8080/job/azresource-creation/lastSuccessfulBuild/api/json -Headers $Header
 
- 
+ sh "curl -D- -u $USERNAME:$PASSWORD -X GET -H 'Content-Type: application/json' http://54.174.181.118:8080/job/azresource-creation/lastSuccessfulBuild/api/json"
+
       
 
 
