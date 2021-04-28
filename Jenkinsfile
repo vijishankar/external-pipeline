@@ -15,12 +15,13 @@ pipeline {
                   }
            }
       
-      stage ('Invoke_pipeline') {
+      stage ('Invoke_pipeline') 
+      {
             steps {
                 build job: 'azresource-creation/main', parameters: [string(name: 'ENVIRONMENT', value: '$Env:ENVIRONMENT')]
                   
-            }
-        }
+                 }
+      }
   }
 
 }
