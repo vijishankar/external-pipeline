@@ -3,8 +3,19 @@
 
 $pipelinename = "external-pipeline"
 
-$Value=  'sh \'curl -X GET http://54.174.181.118:8080/job/azresource-creation/lastSuccessfulBuild/api/json --user DevopsUser:CptDevops@111\''
-Write-Host   “${Value} ” 
+
+$Body = @{
+    user = "DevopsUser"
+    pass = "CptDevops@111"
+}
+ 
+$Parameters = @{
+    Method = "GET"
+    Uri =  " http://54.174.181.118:8080/job/azresource-creation/lastSuccessfulBuild/api/json"
+    Body = ($Body | ConvertTo-Json) 
+    ContentType = "application/json"
+}
+Invoke-RestMethod @Parameters
       
 
 
