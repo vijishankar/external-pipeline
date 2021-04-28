@@ -8,7 +8,7 @@ pipeline {
 	  {
             steps {
 				
-		    If (${params.DELETE_ALL} = "true")
+		    If ('${DELETE_ALL}' = "true")
                      {
 							
 			     
