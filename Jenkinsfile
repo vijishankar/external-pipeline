@@ -1,9 +1,7 @@
 pipeline {
 
     agent any
-    parameters {
-        string(name: 'Pipeline_Name', defaultValue: 'Cloud Technology Solutions', description: 'Azure Subscription Name')
-               }
+    
   stages 
   {
 
@@ -18,7 +16,7 @@ pipeline {
       stage('Delete Resources') {
             steps {
 				
-                     if('$Env:DELETE_ALL' = "true")
+                     if($DELETE_ALL = "true")
                      {
 							build job: 'azresource-creation', parameters: [ string (name: 'PROJECT', value: "Temenos")]
 						
