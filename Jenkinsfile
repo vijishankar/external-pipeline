@@ -8,7 +8,7 @@ pipeline {
 	  {
             steps {
 				
-		    If ("${DELETE_ALL} -eq $true"")
+		    If ("${DELETE_ALL} = $true"")
                      {
 							
 			     
