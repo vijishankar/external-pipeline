@@ -16,15 +16,17 @@ pipeline {
       stage('Delete Resources') {
             steps {
 				
-                     if($DELETE_ALL == "true")
+                     If ($DELETE_ALL == "true")
                      {
-							build job: 'azresource-creation', parameters: [ string (name: 'PROJECT', value: "Temenos")]
+							
+			     
+			     build job: 'azresource-creation', parameters: [ string (name: 'PROJECT', value: "Temenos")]
 						
 						
                      }   
 					
 				
-			}
+		}
         }	
   }
 
