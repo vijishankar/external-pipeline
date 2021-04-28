@@ -1,16 +1,6 @@
 pipeline {
 
     agent any
-    
-  stages 
-  {
-      stage('Delete Resources') 
-	  {
-            steps {
-				
-		    If (params.DELETE_ALL = "true")pipeline {
-
-    agent any
 	parameter[
 	string(name: 'PROJECT', defaultValue: '', description: 'Project Name')
 	]
@@ -29,20 +19,6 @@ pipeline {
             steps {
                 echo "Hello, bitwiseman!"
             }
-				
-		}
-        }	
-  }
-
-}
-                     {
-							
-			     
-			     build job: 'azresource-creation', parameters: [ string (name: 'PROJECT', value: "Temenos")]
-						
-						
-                     }   
-					
 				
 		}
         }	
