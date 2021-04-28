@@ -20,7 +20,7 @@ pipeline {
 				
                      if('$Env:DELETE_ALL' = "true")
                      {
-							build job: 'TIPS_DELETE_SHAIK', parameters: [ string (name: 'PROJECT', value: "Temenos")]
+							build job: 'azresource-creation', parameters: [ string (name: 'PROJECT', value: "Temenos")]
 						
 						
                      }   
