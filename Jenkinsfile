@@ -17,9 +17,8 @@ pipeline {
       
       stage ('Invoke_pipeline') {
             steps {
-                build job: 'azresource-creation', parameters: [
-                string(name: 'ENVIRONMENT', value: '$Env:ENVIRONMENT')
-                ]
+                build job: 'azresource-creation', parameters: [string(name: 'ENVIRONMENT', value: '$Env:ENVIRONMENT')]
+                  
             }
         }
   }
